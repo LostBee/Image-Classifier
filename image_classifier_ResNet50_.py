@@ -1,7 +1,7 @@
 #Importing ingredients as needed
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
-from tensorflow.keras.applications.mobilenet_v2 import ResNet50, preprocess_input, decode_predictions
+from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input, decode_predictions
 import numpy as np
 
 #The recipe - fucntion to classify images
@@ -32,7 +32,7 @@ def classify_image(image_path):
 #Main script
 if __name__ == "__main__":
     # IMPORTANT: Change this to the path of your image file
-    IMAGE_FILE_PATH = 'image4.jpg' 
+    IMAGE_FILE_PATH = 'image2.jpg' 
 
     try:
         results = classify_image(IMAGE_FILE_PATH)
