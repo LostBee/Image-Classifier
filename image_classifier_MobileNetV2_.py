@@ -36,7 +36,7 @@ def classify_image(image_path):
 #Main script
 if __name__ == "__main__":
     # IMPORTANT: Change this to the path of your image file
-    IMAGE_FILE_PATH = 'image1.jpg' 
+    IMAGE_FILE_PATH = 'image4.jpg' 
 
     try:
         results = classify_image(IMAGE_FILE_PATH)
