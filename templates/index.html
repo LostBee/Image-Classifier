@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Image Classifier</title>
+
+    <!-- Optional minimalist CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+
+    <script defer src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+<body>
+    <h1>AI Image Classifier</h1>
+
+    <form id="uploadForm">
+        <input type="file"
+               id="fileInput"
+               name="image"
+               accept="image/*"
+               required>
+        <button type="submit">Classify</button>
+    </form>
+
+    <pre id="result"></pre>
+</body>
+</html>

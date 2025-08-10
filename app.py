@@ -2,6 +2,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
+from flask import render_template
 import tempfile, os
 from tensorflow.keras.applications.resnet50 import ResNet50
 from new_image_classifier_ResNet50_ import classify_image   # your function!
@@ -39,7 +40,7 @@ def classify_upload():
 # --------------------------------------
 @app.route("/")
 def index():
-    return "POST an image to /api/classify"
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
