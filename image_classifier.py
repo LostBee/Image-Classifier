@@ -25,5 +25,25 @@ def classify_image(image_path):
     # Normalize the image data to match the format the model was trained on
     processed_img = preprocess_input(img_array_expanded)
 
+    # Let's Predict
+    predictions = model.predict(processed_img)
+    
+    # Decode to read or translate to what we can understand
+    decoded_predictions = decode_predictions(predictions, top=3)[0]
+    
+    return decoded_predictions
  
+#Main script
+if __name__ == "__main__":
+    # IMPORTANT: Change this to the path of your image file
+    IMAGE_FILE_PATH = 'your_image.jpg' 
+
+    try:
+        results = classify_image(IMAGE_FILE_PATH)
+        print("The model predicts this is a...")
+        for i, (imagenet_id, label, score) in enumerate(results):
+            print(f"{i+1}: {label.replace('_', ' ')} ({score:.2%})")
+    except FileNotFoundError:
+        print(f"Error: The file '{IMAGE_FILE_PATH}' was not found.")
+        print("Please make sure the image is in the same folder as the script, or provide the full path.")
  
