@@ -38,12 +38,12 @@ def classify_image(image_path: str, model: ResNet50 = None, top_k: int = 3):
     return [(label.replace("_", " "), float(prob)) for (_, label, prob) in decoded]
 
 
-# Stand-alone test: `python image_classifier_ResNet50_.py example.jpg`
+# Stand-alone test: `python new_image_classifier_ResNet50_.py example.jpg`
 if __name__ == "__main__":
     import sys, pprint, os
 
     if len(sys.argv) < 2:
-        print("Usage: python image_classifier_ResNet50_.py <image_path>")
+        print("Usage: python new_image_classifier_ResNet50_.py <image_path>")
         sys.exit(1)
 
     img_path = sys.argv[1]
